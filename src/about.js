@@ -1,0 +1,6 @@
+export const aboutHeading = document.createElement("h1");
+aboutHeading.textContent = "ABOUT US";
+
+export const aboutParagraph = document.createElement("p");
+aboutParagraph.innerHTML =
+  "At <strong>Lumière</strong>, we are passionate about creating unforgettable dining experiences that blend exceptional flavors with impeccable service. Our philosophy is rooted in the belief that fine dining is more than just a meal—it’s an experience that engages the senses, tells a story, and fosters connection. <br/><br/>Nestled in the heart of Kuala Lumpur, our restaurant brings together the finest locally sourced ingredients and global culinary techniques to craft dishes that are both innovative and timeless. Whether you’re celebrating a special occasion or enjoying an intimate meal, we invite you to indulge in a journey of taste, texture, and elegance. <br/><br/>Our team of highly skilled chefs and staff are dedicated to offering you a seamless dining experience, where every detail matters. From the first course to the last, we ensure that every bite is a masterpiece, paired with world-class wines and personalized service. <br/><br/>Join us at <strong>Lumière</strong>, where every meal is an opportunity to celebrate life’s finest moments.";
