@@ -127,3 +127,76 @@ nav a:hover {
     max-height: 300px;
   }
 }
+
+footer {
+  margin-top: auto;
+  display: flex;
+  background-color: transparent;
+  color: #333333;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+
+footer a {
+  display: flex;
+  align-items: center; /* Aligns items vertically */
+  text-decoration: underline;
+  background-color: transparent;
+  color: #333333;
+  font-size: 1.2rem;
+  gap: 8px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bolder;
+}
+
+footer a:hover {
+  animation: float 3s ease-in-out infinite;
+  color: #aa0000;
+}
+
+.github-logo {
+  display: inline-block;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  max-width: 28px;
+  max-height: 28px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+@keyframes flicker {
+  0% {
+    box-shadow: 0 0 10px #4da8da, 0 0 20px #4da8da, 0 0 30px #4da8da;
+  }
+  50% {
+    box-shadow: 0 0 20px #4da8da, 0 0 30px #4da8da, 0 0 40px #4da8da;
+  }
+  100% {
+    box-shadow: 0 0 15px #4da8da, 0 0 25px #4da8da, 0 0 35px #4da8da;
+  }
+}
+
+@keyframes flickerText {
+  0% {
+    text-shadow: 0 0 10px #4da8da, 0 0 20px #4da8da, 0 0 30px #4da8da;
+  }
+  50% {
+    text-shadow: 0 0 20px #4da8da, 0 0 30px #4da8da, 0 0 40px #4da8da;
+  }
+  100% {
+    text-shadow: 0 0 15px #4da8da, 0 0 25px #4da8da, 0 0 35px #4da8da;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
