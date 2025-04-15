@@ -8,6 +8,10 @@ const menuBtn = document.querySelector(".menu");
 const aboutBtn = document.querySelector(".about");
 const logo = document.querySelector(".logo");
 const content = document.getElementById("content");
+const burger = document.querySelector(".burger");
+const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
+const closeBtn = document.querySelector(".close-menu");
 
 // Function to load content with smooth transitions
 function loadContent(elements = []) {
@@ -43,4 +47,21 @@ menuBtn.addEventListener("click", () => {
 
 aboutBtn.addEventListener("click", () => {
   loadContent([aboutHeading, aboutParagraph]);
+});
+
+burger.addEventListener("click", () => {
+  burger.classList.toggle("active");
+  navLinks.classList.toggle("active");
+});
+
+navItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    burger.classList.remove("active");
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  navLinks.classList.remove("active");
+  burger.classList.remove("active");
 });

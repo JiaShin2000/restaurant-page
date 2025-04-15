@@ -60,6 +60,31 @@ nav a:hover {
   border-bottom: 2px solid #aa0000;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.burger {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* hidden by default */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.close-menu {
+  display: none; /* hide by default (desktop) */
+}
+
 /* Main Content Area */
 #content {
   max-width: 1000px;
@@ -115,8 +140,70 @@ nav a:hover {
 /* Responsive */
 @media (max-width: 768px) {
   nav {
-    flex-direction: column;
+    flex-direction: row;
     gap: 10px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    z-index: 99;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .nav-links a:hover {
+    background-color: #f0f0f0;
+  }
+
+  .nav-links.active {
+    display: flex;
+    opacity: 0.95;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .close-menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 3em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    z-index: 100;
+    transition: color 0.3s;
+  }
+
+  .close-menu:hover {
+    color: #aa0000;
+  }
+
+  .burger {
+    display: block; /* show burger on small screens */
   }
 
   #content h1 {
